@@ -2,6 +2,10 @@
 
 A new Flutter project.
 
+- Nama : Ischika Afrilla
+- NPM : 2306227955
+- PBP F
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
@@ -15,9 +19,6 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-### Nama : Ischika Afrilla
-### NPM : 2306227955
-### PBP F
 
 # Daftar Isi
 - [Tugas 7](#tugas-7)
@@ -28,13 +29,13 @@ samples, guidance on mobile development, and a full API reference.
     - Stateless Widget adalah jenis widget yang tidak memiliki state (keadaan) yang dapat berubah setelah widget itu dibuat. Dengan kata lain, semua data atau informasi yang ditampilkan oleh widget ini bersifat tetap atau konstan selama widget tersebut aktif dalam aplikasi.
     - Stateful Widget adalah jenis widget yang memiliki state yang dapat berubah selama widget tersebut aktif dalam aplikasi. State ini memungkinkan widget untuk merespons perubahan data atau interaksi pengguna, sehingga tampilan atau perilaku widget dapat berubah sesuai dengan keadaan atau input yang diterima.
 
-    | Perbedaan | Stateless Widget | Stateful Widget |
-    | ---- | ----- | ----- |
-    | Mutabilitas | Tidak dapat berubah setelah dibangun	| Dapat berubah seiring waktu | 
-    | State | Tidak memiliki state | Memiliki state yang dapat diubah |
-    | Penggunaan | Untuk tampilan statis atau konstan | Untuk tampilan dinamis atau interaktif |
-    | *Method* `build()` | Dipanggil satu kali saat widget dibangun | Dipanggil setiap kali `setState()` dipanggil |
-    | Contoh Kegunaan | Teks, gambar, ikon | Tombol, form, slider, animasi | 
+      | Perbedaan | Stateless Widget | Stateful Widget |
+      | ---- | ----- | ----- |
+      | Mutabilitas | Tidak dapat berubah setelah dibangun	| Dapat berubah seiring waktu | 
+      | State | Tidak memiliki state | Memiliki state yang dapat diubah |
+      | Penggunaan | Untuk tampilan statis atau konstan | Untuk tampilan dinamis atau interaktif |
+      | *Method* `build()` | Dipanggil satu kali saat widget dibangun | Dipanggil setiap kali `setState()` dipanggil |
+      | Contoh Kegunaan | Teks, gambar, ikon | Tombol, form, slider, animasi | 
 
 2. Sebutkan widget apa saja yang kamu gunakan pada proyek ini dan jelaskan fungsinya.
 

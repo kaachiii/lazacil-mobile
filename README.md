@@ -95,3 +95,17 @@ samples, guidance on mobile development, and a full API reference.
       ```
 
     - Ubah `const MyHomePage(title: 'Flutter Demo Home Page')` pada `main.dart` menjadi `MyHomePage(),`
+    - Ubah sifat widget halaman dari *stateful* menjadi *stateless* pada `menu.dart`, dengan cara:
+      - Menghapus semua isi dari `class MyHomePage ...` seperti `const MyHomePage({super.key, required this.title});`, variabel `final String title`;, komentar-komentar pada berkas, dan `State<MyHomePage> createState() => _MyHomePageState();`.
+      - Mengubah `... extends StatefulWidget` menjadi `... extends StatelessWidget` pada `class MyHomePage`.
+      - Menambahkan `MyHomePage({super.key});` sebagai constructor class `MyHomePage`.
+      - Menghapus seluruh `class _MyHomePageState extends State<MyHomePage>`.
+      - Menambahkan `Widget build` pada class `MyHomePage ...`.
+    - Deklarasikan tiga variabel bertipe *string* yang berisi NPM, nama, dan kelas pada `class MyHomePage` di `menu.dart`.
+    - Buat *class* baru bernama `InfoCard` pada `menu.dart`.
+    - Buat *class* baru bernama `ItemHomePage` pada `menu.dart`.
+    - Buat `List<ItemHomepage> items` pada *class* `MyHomePage` yang berisi tombol Lihat Daftar Produk, Tambah Produk, dan Logout.
+    - Buat *class* baru bernama `ItemCard` pada `menu.dart` untuk menampilkan tombol-tombol yang sudah dibuat.
+    - Ubah `Widget build()` pada *class* `MyHomePage` agar dapat mengintegrasikan `InfoCard` dan `ItemCard` untuk ditampilkan pada `MyHomePage`.
+    - Coba jalankan `flutter analyze` pada *root folder* proyek untuk memastikan tidak ada masalah pada kode.
+    - Terakhir, *push* kode ke GitHub seperti biasa.

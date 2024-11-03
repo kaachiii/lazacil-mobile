@@ -6,20 +6,6 @@ A new Flutter project.
 - NPM : 2306227955
 - PBP F
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-
 # Daftar Isi
 - [Tugas 7](#tugas-7)
 
@@ -51,6 +37,7 @@ samples, guidance on mobile development, and a full API reference.
       - `Center`: Menempatkan *widget* di tengah layar secara horizontal.
       - `GridView.count`: Mengatur tampilan item dalam bentuk `grid` dengan tiga kolom. Setiap elemen di dalam `grid` adalah `ItemCard`, yang diulang sesuai jumlah item yang ada di dalam daftar `items`.
       - `ItemCard`: Widget kustom yang menampilkan ikon dan nama item. `ItemCard` menggunakan `Material` dan `InkWell` untuk memberikan efek animasi saat ditekan. Ketika `ItemCard` ditekan, akan muncul `SnackBar` yang menampilkan pesan sesuai nama item yang ditekan.
+      - `SnackBar`: Menampilkan pesan singkat pada bagian bawah layar sebagai respon terhadap interaksi pengguna.
       - `Material`: Membungkus `ItemCard` agar bisa diberikan warna latar belakang sesuai tema aplikasi.
       - `InkWell`: Menambahkan efek *ripple* pada `ItemCard` saat ditekan, memberikan tampilan interaktif bagi pengguna.
       - `Icon`: Menampilkan ikon sesuai dengan yang telah ditentukan dalam setiap item pada daftar `items`.
@@ -79,7 +66,7 @@ samples, guidance on mobile development, and a full API reference.
 
 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist-checklist di atas.
 
-    - Buat proyek Flutter baru bernama `lazacil_mobile` dengan menjalankan *prompt* `flutter create lazacil_mobile` lalu masuk ke dalam direktori *root folder* proyek `lazacil_mobile`.
+    - Buat proyek Flutter baru bernama `lazacil_mobile` *(melanjutkan tugas sebelumnya)* dengan menjalankan *prompt* `flutter create lazacil_mobile` lalu masuk ke dalam direktori *root folder* proyek `lazacil_mobile`.
     - Coba jalankan proyek dengan prompt `flutter run` lalu lihat hasilnya.
     - Buat repositori baru dengan nama `lazacil-mobile` pada GitHub lalu *push* proyek `lazacil_mobile` ke repositori tersebut.
     - Buat file baru bernama `menu.dart` pada direktori `lazacil_mobile/lib` lalu tambahkan `import 'package:flutter/material.dart';` pada bagian paling atas.

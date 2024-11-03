@@ -83,7 +83,7 @@ samples, guidance on mobile development, and a full API reference.
     - Coba jalankan proyek dengan prompt `flutter run` lalu lihat hasilnya.
     - Buat repositori baru dengan nama `lazacil-mobile` pada GitHub lalu *push* proyek `lazacil_mobile` ke repositori tersebut.
     - Buat file baru bernama `menu.dart` pada direktori `lazacil_mobile/lib` lalu tambahkan `import 'package:flutter/material.dart';` pada bagian paling atas.
-    - Cut baris ke-39 sampai akhir dari file `main.dart` ke `menu.dart`.
+    - *Cut* baris ke-39 sampai akhir dari file `main.dart` ke `menu.dart`.
     - Tambahkan `import 'package:lazacil_mobile/menu.dart';` pada bagian paling atas `main.dart`.
     - Coba jalankan proyek dengan prompt `flutter run` dan pastikan aplikasi tetap berjalan dengan baik.
     - Ubah tema aplikasi pada `main.dart` menjadi seperti ini.

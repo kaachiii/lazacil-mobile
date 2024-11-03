@@ -46,11 +46,11 @@ samples, guidance on mobile development, and a full API reference.
       - `Padding`: Menyediakan `padding` di sekitar `body` halaman agar konten tidak langsung menempel ke tepi layar.
       - `Column`: Menyusun *widget* secara vertikal. `Column` digunakan untuk menyusun `Row` yang berisi `InfoCard` dan elemen-elemen lainnya secara vertikal.
       - `Row`: Menyusun *widget* `InfoCard` secara horizontal agar terlihat seperti satu baris di dalam tampilan.
-      - `InfoCard`: *Widget* kustom yang dibuat untuk menampilkan informasi berupa "NPM", "Name", dan "Class". Setiap `InfoCard` menggunakan *widget* `Card` sebagai struktur utama, dilengkapi dengan teks judul dan konten yang diatur secara vertikal.
+      - `InfoCard`: *Widget* kustom yang dibuat untuk menampilkan informasi berupa "NPM", "Name", dan "Class". Setiap `InfoCard` menggunakan *widget* `Card` sebagai struktur utama, ditambah dengan teks judul dan konten yang diatur secara vertikal.
       - `SizedBox`: Memberikan jarak antar *widget* secara vertikal dengan nilai 16.0.
       - `Center`: Menempatkan *widget* di tengah layar secara horizontal.
       - `GridView.count`: Mengatur tampilan item dalam bentuk `grid` dengan tiga kolom. Setiap elemen di dalam `grid` adalah `ItemCard`, yang diulang sesuai jumlah item yang ada di dalam daftar `items`.
-      - `ItemCard`: Widget custom yang menampilkan ikon dan nama item. `ItemCard` menggunakan `Material` dan `InkWell` untuk memberikan efek animasi saat ditekan. Ketika `ItemCard` ditekan, akan muncul `SnackBar` yang menampilkan pesan sesuai nama item yang ditekan.
+      - `ItemCard`: Widget kustom yang menampilkan ikon dan nama item. `ItemCard` menggunakan `Material` dan `InkWell` untuk memberikan efek animasi saat ditekan. Ketika `ItemCard` ditekan, akan muncul `SnackBar` yang menampilkan pesan sesuai nama item yang ditekan.
       - `Material`: Membungkus `ItemCard` agar bisa diberikan warna latar belakang sesuai tema aplikasi.
       - `InkWell`: Menambahkan efek *ripple* pada `ItemCard` saat ditekan, memberikan tampilan interaktif bagi pengguna.
       - `Icon`: Menampilkan ikon sesuai dengan yang telah ditentukan dalam setiap item pada daftar `items`.
@@ -58,12 +58,12 @@ samples, guidance on mobile development, and a full API reference.
 
 3. Apa fungsi dari `setState()`? Jelaskan variabel apa saja yang dapat terdampak dengan fungsi tersebut.
 
-    Fungsi `setState()` dalam Flutter digunakan untuk memberi tahu *framework* bahwa ada perubahan pada *state* dari sebuah *Stateful Widget* yang perlu diperbarui. Dengan memanggil `setState()`, kita memicu Flutter untuk membangun ulang (*rebuild*) widget tersebut, sehingga tampilan akan diperbarui sesuai dengan *state* yang baru.
+    Fungsi `setState()` digunakan untuk memberi tahu *framework* bahwa ada perubahan pada *state* dari sebuah *Stateful Widget* yang perlu diperbarui. Dengan memanggil `setState()`, kita memicu Flutter untuk membangun ulang (*rebuild*) *widget* tersebut, sehingga tampilan akan diperbarui sesuai dengan *state* yang baru.
 
     Fungsi `setState()` biasanya berdampak pada variabel-variabel atau properti yang ada di dalam kelas *state* dari `Stateful Widget`, yakni:
     
       - Variabel *State*: Variabel yang menentukan keadaan dari *widget*, misalnya jumlah `counter`, teks, warna, atau kondisi tertentu (seperti `isLoggedIn`, `isLoading`, dsb).
-      - List dan Map: Jika *widget* menampilkan daftar atau objek peta, maka perubahan pada elemen-elemen dalam daftar atau peta tersebut juga memerlukan `setState()` untuk diperbarui di layar.
+      - List dan Map: Jika *widget* menampilkan list atau objek map, maka perubahan pada elemen-elemen dalam list atau map tersebut juga memerlukan `setState()` untuk diperbarui di layar.
       - Data dari Input Pengguna: Variabel yang menyimpan input pengguna, seperti teks dari `TextField`, status `Checkbox`, atau posisi *slider*.
 
 4. Jelaskan perbedaan antara `const` dengan `final`.
@@ -73,8 +73,25 @@ samples, guidance on mobile development, and a full API reference.
     | Perbedaan | `const` | `final` |
     | ---- | ----- | ----- |
     | Waktu Inisialisasi | Waktu kompilasi	| Waktu kompilasi atau runtime | 
-    | Immutabilitas Objek | Sepenuhnya *immutable* dan disimpan di memori tunggal | *Immutable*, tetapi bisa mereferensikan objek mutable |
+    | Immutabilitas Objek | Sepenuhnya *immutable* dan disimpan di memori tunggal | *Immutable*, tetapi bisa mereferensikan objek *mutable* |
     | Penggunaan Objek Konstan | Dapat digunakan untuk membuat objek konstan | Tidak dapat digunakan untuk membuat objek konstan |
     | Perubahan Nilai | Tidak bisa berubah | Tidak bisa berubah setelah diinisialisasi |
 
 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist-checklist di atas.
+
+    - Buat proyek Flutter baru dengan nama `lazacil_mobile` dengan menjalankan *prompt* `flutter create lazacil_mobile` lalu masuk ke dalam direktori *root folder* proyek `lazacil_mobile`.
+    - Coba jalankan proyek dengan prompt `flutter run` lalu lihat hasilnya.
+    - Buat repositori baru dengan nama `lazacil-mobile` pada GitHub lalu *push* proyek `lazacil_mobile` ke repositori tersebut.
+    - Buat file baru bernama `menu.dart` pada direktori `lazacil_mobile/lib` lalu tambahkan `import 'package:flutter/material.dart';` pada bagian paling atas.
+    - Cut baris ke-39 sampai akhir dari file `main.dart` ke `menu.dart`.
+    - Tambahkan `import 'package:lazacil_mobile/menu.dart';` pada bagian paling atas `main.dart`.
+    - Coba jalankan proyek dengan prompt `flutter run` dan pastikan aplikasi tetap berjalan dengan baik.
+    - Ubah tema aplikasi pada `main.dart` menjadi seperti ini.
+
+      ```dart
+      colorScheme: ColorScheme.fromSwatch(
+          primarySwatch: Colors.pink,
+        ).copyWith(secondary: Colors.pink[200]),
+      ```
+
+    - Ubah `const MyHomePage(title: 'Flutter Demo Home Page')` pada `main.dart` menjadi `MyHomePage(),`

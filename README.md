@@ -79,7 +79,7 @@ samples, guidance on mobile development, and a full API reference.
 
 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist-checklist di atas.
 
-    - Buat proyek Flutter baru dengan nama `lazacil_mobile` dengan menjalankan *prompt* `flutter create lazacil_mobile` lalu masuk ke dalam direktori *root folder* proyek `lazacil_mobile`.
+    - Buat proyek Flutter baru bernama `lazacil_mobile` dengan menjalankan *prompt* `flutter create lazacil_mobile` lalu masuk ke dalam direktori *root folder* proyek `lazacil_mobile`.
     - Coba jalankan proyek dengan prompt `flutter run` lalu lihat hasilnya.
     - Buat repositori baru dengan nama `lazacil-mobile` pada GitHub lalu *push* proyek `lazacil_mobile` ke repositori tersebut.
     - Buat file baru bernama `menu.dart` pada direktori `lazacil_mobile/lib` lalu tambahkan `import 'package:flutter/material.dart';` pada bagian paling atas.
@@ -100,12 +100,12 @@ samples, guidance on mobile development, and a full API reference.
       - Mengubah `... extends StatefulWidget` menjadi `... extends StatelessWidget` pada `class MyHomePage`.
       - Menambahkan `MyHomePage({super.key});` sebagai constructor class `MyHomePage`.
       - Menghapus seluruh `class _MyHomePageState extends State<MyHomePage>`.
-      - Menambahkan `Widget build` pada class `MyHomePage ...`.
+      - Menambahkan `Widget build` pada `class MyHomePage ...`.
     - Deklarasikan tiga variabel bertipe *string* yang berisi NPM, nama, dan kelas pada `class MyHomePage` di `menu.dart`.
     - Buat *class* baru bernama `InfoCard` pada `menu.dart`.
     - Buat *class* baru bernama `ItemHomePage` pada `menu.dart`.
     - Buat `List<ItemHomepage> items` pada *class* `MyHomePage` yang berisi tombol Lihat Daftar Produk, Tambah Produk, dan Logout.
     - Buat *class* baru bernama `ItemCard` pada `menu.dart` untuk menampilkan tombol-tombol yang sudah dibuat.
-    - Ubah `Widget build()` pada *class* `MyHomePage` agar dapat mengintegrasikan `InfoCard` dan `ItemCard` untuk ditampilkan pada `MyHomePage`.
+    - Ubah `Widget build()` pada `class MyHomePage` agar dapat mengintegrasikan `InfoCard` dan `ItemCard` untuk ditampilkan pada `MyHomePage`.
     - Coba jalankan `flutter analyze` pada *root folder* proyek untuk memastikan tidak ada masalah pada kode.
     - Terakhir, *push* kode ke GitHub seperti biasa.

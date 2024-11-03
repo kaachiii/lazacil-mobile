@@ -1,6 +1,6 @@
 # lazacil_mobile
 
-A new Flutter project.
+A new Flutter project for the Lazacil mobile version.
 
 - Nama : Ischika Afrilla
 - NPM : 2306227955

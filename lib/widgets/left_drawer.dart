@@ -56,7 +56,7 @@ class LeftDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.add),
             title: const Text('Tambah Produk'),
-            // Bagian redirection ke MoodEntryFormPage
+            // Bagian redirection ke ProductFormPage
             onTap: () {
               Navigator.pushReplacement(
                   context,

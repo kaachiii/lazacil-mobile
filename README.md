@@ -136,45 +136,45 @@ A new Flutter project for the Lazacil mobile version.
       - Cocok digunakan ketika ingin menampilkan elemen-elemen secara berjajar, seperti ikon, tombol, atau elemen lain yang harus ditampilkan berdampingan.
 
 
-      | Fitur | *Column* | *Row* |
-      | ---- | ----- | ----- |
-      | Susunan elemen | Vertikal (dari atas ke bawah)	| Horizontal (dari kiri ke kanan) | 
-      | `mainAxisAlignment` | Mengatur posisi di sumbu vertikal | Mengatur posisi di sumbu horizontal |
-      | `crossAxisAlignment` | Mengatur posisi di sumbu horizontal | Mengatur posisi di sumbu vertikal |
-      | Cocok untuk | Daftar elemen bertingkat ke bawah | Elemen berjajar di satu baris |
-      | Contoh penggunaan | Form, daftar item, paragraf teks | Toolbar, baris ikon atau tombol |
-
     - Contoh implementasi *Column*
 
-    ```dart
-    // Menyusun title dan content secara vertikal.
-    child: Column(
-      children: [
-        Text(
-          title,
-          style: const TextStyle(fontWeight: FontWeight.bold),
-        ),
-        const SizedBox(height: 8.0),
-        Text(content),
-      ],
-    ),
-    ```
+      ```dart
+      // Menyusun title dan content secara vertikal.
+      child: Column(
+        children: [
+          Text(
+            title,
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 8.0),
+          Text(content),
+        ],
+      ),
+      ```
 
   - Contoh implementasi *Row*
 
-  ```dart
-  children: [
-    // Row untuk menampilkan 3 InfoCard secara horizontal.
-    Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        InfoCard(title: 'NPM', content: npm),
-        InfoCard(title: 'Name', content: name),
-        InfoCard(title: 'Class', content: className),
-      ],
-    ),
-  ],
-  ```
+    ```dart
+    children: [
+      // Row untuk menampilkan 3 InfoCard secara horizontal.
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          InfoCard(title: 'NPM', content: npm),
+          InfoCard(title: 'Name', content: name),
+          InfoCard(title: 'Class', content: className),
+        ],
+      ),
+    ],
+    ```
+
+    | Fitur | *Column* | *Row* |
+    | ---- | ----- | ----- |
+    | Susunan elemen | Vertikal (dari atas ke bawah)	| Horizontal (dari kiri ke kanan) | 
+    | `mainAxisAlignment` | Mengatur posisi di sumbu vertikal | Mengatur posisi di sumbu horizontal |
+    | `crossAxisAlignment` | Mengatur posisi di sumbu horizontal | Mengatur posisi di sumbu vertikal |
+    | Cocok untuk | Daftar elemen bertingkat ke bawah | Elemen berjajar di satu baris |
+    | Contoh penggunaan | Form, daftar item, paragraf teks | Toolbar, baris ikon atau tombol |
 
 3. Sebutkan apa saja elemen input yang kamu gunakan pada halaman *form* yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!
 

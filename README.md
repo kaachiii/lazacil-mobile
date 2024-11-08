@@ -178,6 +178,20 @@ A new Flutter project for the Lazacil mobile version.
 
 3. Sebutkan apa saja elemen input yang kamu gunakan pada halaman *form* yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!
 
+    Elemen input yang digunakan:
+      - TextFormField untuk Nama Produk
+      - TextFormField untuk Jumlah Produk
+      - TextFormField untuk Deskripsi Produk
+      - ElevatedButton untuk Simpan Data
+
+    Ya, terdapat elemen input Flutter lain yang tidak saya gunakan, yaitu:
+      - Checkbox
+      - Radio
+      - Switch
+      - Slider
+      - DatePicker
+      - DropdownButton
+
 4. Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?
 
 5. Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?

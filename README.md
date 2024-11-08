@@ -135,13 +135,14 @@ A new Flutter project for the Lazacil mobile version.
       - Mengatur anak-anaknya secara horizontal, dari kiri ke kanan.
       - Cocok digunakan ketika ingin menampilkan elemen-elemen secara berjajar, seperti ikon, tombol, atau elemen lain yang harus ditampilkan berdampingan.
 
-    | Fitur | *Column* | *Row* |
-    | ---- | ----- | ----- |
-    | Susunan elemen | Vertikal (dari atas ke bawah)	| Horizontal (dari kiri ke kanan) | 
-    | `mainAxisAlignment` | Mengatur posisi di sumbu vertikal | Mengatur posisi di sumbu horizontal |
-    | `crossAxisAlignment` | Mengatur posisi di sumbu horizontal | Mengatur posisi di sumbu vertikal |
-    | Cocok untuk | Daftar elemen bertingkat ke bawah | Elemen berjajar di satu baris |
-    | Contoh penggunaan | Form, daftar item, paragraf teks | Toolbar, baris ikon atau tombol |
+
+      | Fitur | *Column* | *Row* |
+      | ---- | ----- | ----- |
+      | Susunan elemen | Vertikal (dari atas ke bawah)	| Horizontal (dari kiri ke kanan) | 
+      | `mainAxisAlignment` | Mengatur posisi di sumbu vertikal | Mengatur posisi di sumbu horizontal |
+      | `crossAxisAlignment` | Mengatur posisi di sumbu horizontal | Mengatur posisi di sumbu vertikal |
+      | Cocok untuk | Daftar elemen bertingkat ke bawah | Elemen berjajar di satu baris |
+      | Contoh penggunaan | Form, daftar item, paragraf teks | Toolbar, baris ikon atau tombol |
 
     - Contoh implementasi *Column*
 

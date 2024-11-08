@@ -101,7 +101,79 @@ A new Flutter project for the Lazacil mobile version.
 ## Tugas 8
 1. Apa kegunaan `const` di Flutter? Jelaskan apa keuntungan ketika menggunakan `const` pada kode Flutter. Kapan sebaiknya kita menggunakan `const`, dan kapan sebaiknya tidak digunakan?
 
+    `const` digunakan untuk membuat nilai atau *widget* yang bersifat *immutable* (tidak dapat diubah) dan *compile-time constant* (konstan saat kompilasi).
+
+    - Kegunaan :
+      - Mendefinisikan nilai konstan
+      - Membuat *widget* konstan
+      - Mengoptimalkan *widget tree*
+    
+    - Keuntungan :
+      - Peningkatan performa
+      - Pengurangan beban CPU
+      - Optimasi pada saat kompilasi
+      - Stabilitas aplikasi yang lebih baik
+
+    - Kapan sebaiknya menggunakan `const`:
+      - Untuk *widget* statis
+      - Untuk nilai/objek yang tidak berubah
+      - Untuk konstruktor *widget*
+      - Untuk optimalisasi di dalam *widget tree*
+
+    - Kapan sebaiknya tidak menggunakan `const`:
+      - Jika objek atau nilai akan berubah
+      - Untuk objek yang bergantung pada nilai non-konstan
+      - Jika membuat *debug* lebih sulit
+
 2. Jelaskan dan bandingkan penggunaan *Column* dan *Row* pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!
+
+    - *Column* :
+      - Mengatur anak-anaknya secara vertikal, dari atas ke bawah.
+      - Cocok digunakan ketika ingin menampilkan elemen-elemen dalam bentuk daftar ke bawah, seperti teks atau tombol berurutan secara vertikal.
+
+    - *Row* :
+      - Mengatur anak-anaknya secara horizontal, dari kiri ke kanan.
+      - Cocok digunakan ketika ingin menampilkan elemen-elemen secara berjajar, seperti ikon, tombol, atau elemen lain yang harus ditampilkan berdampingan.
+
+    | Fitur | *Column* | *Row* |
+    | ---- | ----- | ----- |
+    | Susunan elemen | Vertikal (dari atas ke bawah)	| Horizontal (dari kiri ke kanan) | 
+    | `mainAxisAlignment` | Mengatur posisi di sumbu vertikal | Mengatur posisi di sumbu horizontal |
+    | `crossAxisAlignment` | Mengatur posisi di sumbu horizontal | Mengatur posisi di sumbu vertikal |
+    | Cocok untuk | Daftar elemen bertingkat ke bawah | Elemen berjajar di satu baris |
+    | Contoh penggunaan | Form, daftar item, paragraf teks | Toolbar, baris ikon atau tombol |
+
+    - Contoh implementasi *Column*
+
+    ```dart
+    // Menyusun title dan content secara vertikal.
+    child: Column(
+      children: [
+        Text(
+          title,
+          style: const TextStyle(fontWeight: FontWeight.bold),
+        ),
+        const SizedBox(height: 8.0),
+        Text(content),
+      ],
+    ),
+    ```
+
+  - Contoh implementasi *Row*
+
+  ```dart
+  children: [
+    // Row untuk menampilkan 3 InfoCard secara horizontal.
+    Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        InfoCard(title: 'NPM', content: npm),
+        InfoCard(title: 'Name', content: name),
+        InfoCard(title: 'Class', content: className),
+      ],
+    ),
+  ],
+  ```
 
 3. Sebutkan apa saja elemen input yang kamu gunakan pada halaman *form* yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!
 

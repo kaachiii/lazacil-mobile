@@ -192,6 +192,10 @@ A new Flutter project for the Lazacil mobile version.
       - DatePicker
       - DropdownButton
 
-4. Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?
+4. Bagaimana cara kamu mengatur tema (*theme*) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?
+
+    Untuk menjaga konsistensi tampilan aplikasi Flutter, saya menggunakan `ThemeData` pada `MaterialApp`. Dengan `ThemeData`, saya dapat mengatur secara global berbagai elemen UI seperti warna, font, dan gaya lainnya. Sebagai contoh, saya menetapkan `primarySwatch` ke `Colors.pink` untuk memberikan nuansa warna yang seragam pada elemen-elemen seperti AppBar dan tombol. Selain itu, dengan mengaktifkan `useMaterial3`, aplikasi saya mengikuti standar Material Design 3 yang lebih modern dan responsif.
+
+    Ya, saya mengimplementasikan tema pada aplikasi yang saya buat karena aplikasi sudah memiliki tema dasar yang diatur melalui `ThemeData`, dengan warna primer `Colors.pink` dan warna sekunder `Colors.pink[200]`. Warna *primary swatch* digunakan untuk elemen UI yang penting seperti AppBar, dan warna *secondary* digunakan pada komponen tambahan.
 
 5. Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?

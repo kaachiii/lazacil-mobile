@@ -8,6 +8,7 @@ A new Flutter project for the Lazacil mobile version.
 
 # Daftar Isi
 - [Tugas 7](#tugas-7)
+- [Tugas 8](#tugas-8)
 
 ## Tugas 7
 1. Jelaskan apa yang dimaksud dengan *stateless widget* dan *stateful widget*, dan jelaskan perbedaan dari keduanya.
@@ -96,3 +97,14 @@ A new Flutter project for the Lazacil mobile version.
     - Ubah `Widget build()` pada `class MyHomePage` agar dapat mengintegrasikan `InfoCard` dan `ItemCard` untuk ditampilkan pada `MyHomePage`.
     - Coba jalankan `flutter analyze` pada *root folder* proyek untuk memastikan tidak ada masalah pada kode.
     - Terakhir, *push* kode ke GitHub seperti biasa.
+
+## Tugas 8
+1. Apa kegunaan `const` di Flutter? Jelaskan apa keuntungan ketika menggunakan `const` pada kode Flutter. Kapan sebaiknya kita menggunakan `const`, dan kapan sebaiknya tidak digunakan?
+
+2. Jelaskan dan bandingkan penggunaan *Column* dan *Row* pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!
+
+3. Sebutkan apa saja elemen input yang kamu gunakan pada halaman *form* yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!
+
+4. Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?
+
+5. Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?

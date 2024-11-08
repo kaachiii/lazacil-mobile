@@ -52,6 +52,10 @@ class _ProductFormPageState extends State<ProductFormPage> {
                     if (value == null || value.isEmpty) {
                       return "Nama produk tidak boleh kosong!";
                     }
+                    // Cek apakah mengandung karakter khusus yang tidak diizinkan
+                    if (RegExp(r'[/\:*?"<>|]').hasMatch(value)) {
+                      return "Nama produk tidak boleh mengandung karakter khusus!";
+                    }
                     return null;
                   },
                 ),
@@ -110,10 +114,14 @@ class _ProductFormPageState extends State<ProductFormPage> {
                     if (value == null || value.isEmpty) {
                       return "Deskripsi produk tidak boleh kosong!";
                     }
+                    if (value.length < 15) {
+                      return "Deskripsi produk harus lebih dari 15 karakter!";
+                    }
                     return null;
                   },
                 ),
               ),
+
 
               Align(
                 alignment: Alignment.bottomCenter,

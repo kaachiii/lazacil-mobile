@@ -152,21 +152,21 @@ A new Flutter project for the Lazacil mobile version.
       ),
       ```
 
-  - Contoh implementasi *Row*
+    - Contoh implementasi *Row*
 
-    ```dart
-    children: [
-      // Row untuk menampilkan 3 InfoCard secara horizontal.
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          InfoCard(title: 'NPM', content: npm),
-          InfoCard(title: 'Name', content: name),
-          InfoCard(title: 'Class', content: className),
-        ],
-      ),
-    ],
-    ```
+      ```dart
+      children: [
+        // Row untuk menampilkan 3 InfoCard secara horizontal.
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            InfoCard(title: 'NPM', content: npm),
+            InfoCard(title: 'Name', content: name),
+            InfoCard(title: 'Class', content: className),
+          ],
+        ),
+      ],
+      ```
 
     | Fitur | *Column* | *Row* |
     | ---- | ----- | ----- |

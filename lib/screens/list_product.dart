@@ -64,9 +64,8 @@ class _ProductPageState extends State<ProductPage> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      
                       Text(
-
-                        // INI BELOM TAUUUUU
                         "${snapshot.data![index].fields.name}",
                         style: const TextStyle(
                           fontSize: 18.0,

@@ -9,6 +9,7 @@ A new Flutter project for the Lazacil mobile version.
 # Daftar Isi
 - [Tugas 7](#tugas-7)
 - [Tugas 8](#tugas-8)
+- [Tugas 9](#tugas-9)
 
 ## Tugas 7
 1. Jelaskan apa yang dimaksud dengan *stateless widget* dan *stateful widget*, dan jelaskan perbedaan dari keduanya.
@@ -201,3 +202,43 @@ A new Flutter project for the Lazacil mobile version.
 5. Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?
 
     Cara saya menangani navigasi dalam aplikasi Flutter yang memiliki banyak halaman adalah dengan menggunakan *widget* `Navigator`. *Widget* `Navigator` menampilkan halaman-halaman dalam bentuk tumpukan (*stack*) yang memudahkan pengelolaan alur navigasi. Untuk menavigasi ke halaman baru, kita dapat mengakses `Navigator` melalui `BuildContext` dan memanggil fungsi-fungsi seperti `push()`, `pop()`, atau `pushReplacement()`. Selain itu, untuk mempermudah navigasi, saya menambahkan *drawer menu* dalam aplikasi. *Drawer menu* adalah menu yang muncul dari sisi kiri atau kanan layar dan biasanya berisi tautan navigasi ke halaman-halaman lain dalam aplikasi.
+
+## Tugas 9
+
+1. Jelaskan mengapa kita perlu membuat model untuk melakukan pengambilan ataupun pengiriman data JSON? Apakah akan terjadi error jika kita tidak membuat model terlebih dahulu?
+
+    Kita perlu membuat model untuk melakkan pengambilan ataupun pengiriman data JSON untuk:
+      - Memastikan Struktur Data Konsisten
+      - Mempermudah Validasi Data
+      - Mempermudah Serialisasi dan Deserialisasi
+      - Meningkatkan Keterbacaan dan Pemeliharaan Kode
+      - Meningkatkan Keamanan
+      - Memfasilitasi Dokumentasi API
+      - Menghindari Kesalahan Penanganan Data
+
+    Tidak membuat model terlebih dahulu saat mengelola data JSON tidak selalu menyebabkan error, tetapi dapat meningkatkan risiko terjadinya berbagai masalah, seperti:
+      - Risiko Error pada Waktu Eksekusi
+      - Kesalahan Data yang Tidak Terdeteksi
+      - Kesulitan dalam Pemeliharaan
+      - Potensi Masalah Keamanan
+      - Kehilangan Keuntungan dari Otomasi
+
+2. Jelaskan fungsi dari library *http* yang sudah kamu implementasikan pada tugas ini!
+
+    Library `http` pada Flutter adalah salah satu paket yang digunakan untuk melakukan HTTP request ke server atau API. Fungsi utama library `http` pada Flutter:
+      - Melakukan HTTP Request
+      - Mengirim Data ke Server
+      - Mengelola Header HTTP
+      - Mengelola Response HTTP
+      - Mendukung Operasi Sinkron dan Asinkron
+      - Mendukung Encoding Data
+      - Mendukung Penggunaan Custom Timeout
+      - Mudah Digunakan Bersama Library Lain
+
+3. Jelaskan fungsi dari CookieRequest dan jelaskan mengapa *instance* CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.
+ 
+4. Jelaskan mekanisme pengiriman data mulai dari input hingga dapat ditampilkan pada Flutter.
+
+5. Jelaskan mekanisme autentikasi dari login, register, hingga logout. Mulai dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
+ 
+6. Jelaskan bagaimana cara kamu mengimplementasikan *checklist* di atas secara *step-by-step*! (bukan hanya sekadar mengikuti tutorial).

@@ -295,36 +295,36 @@ A new Flutter project for the Lazacil mobile version.
 5. Jelaskan mekanisme autentikasi dari login, register, hingga logout. Mulai dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
 
     - Register: Membuat Akun Baru
-      Di Flutter (Input Data Akun)
-      - Input Data: Pengguna memasukkan informasi seperti nama, email, dan kata sandi melalui TextField atau formulir input.
-      - Validasi Input di Flutter: Memastikan semua field terisi dengan format yang benar (contoh: email valid).
-      Di Django (API Register)
-      - Endpoint Register: Django menyediakan endpoint `/api/register/` untuk menerima data pengguna.
-      - Proses Django:
-          - Mengecek apakah email sudah digunakan.
-          - Jika valid, menyimpan data pengguna ke database.
-      - Respons ke Flutter: Mengirim respons dengan status berhasil (201) atau error (400).
+      - Di Flutter (Input Data Akun)
+        - Input Data: Pengguna memasukkan informasi seperti nama, email, dan kata sandi melalui TextField atau formulir input.
+        - Validasi Input di Flutter: Memastikan semua field terisi dengan format yang benar (contoh: email valid).
+      - Di Django (API Register)
+        - Endpoint Register: Django menyediakan endpoint `/api/register/` untuk menerima data pengguna.
+        - Proses Django:
+            - Mengecek apakah email sudah digunakan.
+            - Jika valid, menyimpan data pengguna ke database.
+        - Respons ke Flutter: Mengirim respons dengan status berhasil (201) atau error (400).
 
     - Login: Autentikasi Pengguna
-      Di Flutter (Input dan Pengiriman Data Login)
-      - Input Data: Pengguna memasukkan email dan kata sandi ke formulir login.
-      - Validasi Input: Pastikan email valid dan kata sandi tidak kosong.
-      Di Django (API Login)
-      - Endpoint Login: Django menyediakan endpoint `/api/login/` untuk memvalidasi kredensial pengguna.
-      - Proses Django:
-          - Memeriksa apakah email dan kata sandi cocok dengan data pengguna di database.
-          - Jika cocok, membuat atau mengambil token autentikasi untuk pengguna.
-      - Respons ke Flutter: Mengirim token autentikasi ke Flutter jika login berhasil (status 200) atau pesan error (status 401).
+      - Di Flutter (Input dan Pengiriman Data Login)
+        - Input Data: Pengguna memasukkan email dan kata sandi ke formulir login.
+        - Validasi Input: Pastikan email valid dan kata sandi tidak kosong.
+      - Di Django (API Login)
+        - Endpoint Login: Django menyediakan endpoint `/api/login/` untuk memvalidasi kredensial pengguna.
+        - Proses Django:
+            - Memeriksa apakah email dan kata sandi cocok dengan data pengguna di database.
+            - Jika cocok, membuat atau mengambil token autentikasi untuk pengguna.
+        - Respons ke Flutter: Mengirim token autentikasi ke Flutter jika login berhasil (status 200) atau pesan error (status 401).
 
     - Logout: Mengakhiri Sesi
-      Di Flutter (Logout)
-      - Menghapus Token: Flutter menghapus token dari penyimpanan lokal.
-      - Opsional: Menginformasikan Server (Logout API): Flutter dapat mengirimkan request logout untuk menghapus token dari server (opsional, tergantung implementasi).
-      Di Django (API Logout)
-      - Endpoint Logout: Django dapat menyediakan endpoint /api/logout/ untuk menghapus token pengguna.
-      - Proses Django:
-          - Token yang dikirim oleh Flutter dihapus dari database.
-          - Pengguna tidak dapat mengakses endpoint yang memerlukan autentikasi.
+      - Di Flutter (Logout)
+        - Menghapus Token: Flutter menghapus token dari penyimpanan lokal.
+        - Opsional: Menginformasikan Server (Logout API): Flutter dapat mengirimkan request logout untuk menghapus token dari server (opsional, tergantung implementasi).
+      - Di Django (API Logout)
+        - Endpoint Logout: Django dapat menyediakan endpoint /api/logout/ untuk menghapus token pengguna.
+        - Proses Django:
+            - Token yang dikirim oleh Flutter dihapus dari database.
+            - Pengguna tidak dapat mengakses endpoint yang memerlukan autentikasi.
 
     - Setelah Login: Menampilkan Menu di Flutter
       - Simpan Token: Token yang diterima setelah login disimpan secara lokal menggunakan shared_preferences atau library lainnya.

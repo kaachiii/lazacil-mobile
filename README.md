@@ -236,6 +236,19 @@ A new Flutter project for the Lazacil mobile version.
       - Mudah Digunakan Bersama Library Lain
 
 3. Jelaskan fungsi dari CookieRequest dan jelaskan mengapa *instance* CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.
+
+    `CookieRequest` adalah sebuah abstraksi atau implementasi yang digunakan untuk menangani HTTP request yang membutuhkan manajemen cookie. Fungsi utama dari `CookieRequest`, yaitu:
+      - Menangani Autentikasi dan Sesi
+      - Menyimpan dan Mengelola Cookie
+      - Mengirimkan Cookie secara Otomatis
+      - Mendukung Stateful Communication
+    
+    *instance* CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter, untuk:
+      - Memastikan Konsistensi Sesi
+      - Meningkatkan Efisiensi
+      - Memudahkan Manajemen Sesi
+      - Mendukung Dependency Injection
+      - Meningkatkan Pengalaman Pengguna
  
 4. Jelaskan mekanisme pengiriman data mulai dari input hingga dapat ditampilkan pada Flutter.
 

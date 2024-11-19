@@ -252,6 +252,83 @@ A new Flutter project for the Lazacil mobile version.
  
 4. Jelaskan mekanisme pengiriman data mulai dari input hingga dapat ditampilkan pada Flutter.
 
+      - Pengambilan Input dari Pengguna
+        Input data dimulai dengan pengguna memasukkan informasi melalui komponen UI, seperti:
+          - TextField untuk teks.
+          - Dropdown untuk pilihan.
+          - Checkbox atau Switch untuk boolean.
+          - Button untuk memicu aksi.
+
+      - Validasi Data Input
+        Sebelum data dikirimkan, biasanya dilakukan validasi untuk memastikan input sesuai dengan persyaratan.
+
+          Contoh Validasi:
+          - Kosong atau tidak.
+          - Format tertentu: Email, angka, dll.
+          - Panjang string atau nilai rentang.
+
+      - Serialisasi Data
+        Data yang diambil dari input diubah menjadi format yang dapat dikirim ke server. Format yang umum digunakan:
+          - JSON: Format yang paling populer untuk API.
+          - Form-urlencoded: Digunakan untuk formulir sederhana.
+
+      - Pengiriman Data ke Server
+        Data dikirimkan ke server menggunakan HTTP request (misalnya `POST` atau `PUT`) melalui library seperti http atau Dio.
+
+      - Pemrosesan Data di Server
+        Setelah data diterima di server:
+          - Server memproses data yang diterima.
+          - Server menyimpan data (misalnya, ke dalam database).
+          - Server merespons dengan data yang telah diproses atau status keberhasilan.
+
+      - Parsing dan Menampilkan Respons di Flutter
+        Setelah menerima respons, aplikasi Flutter:
+        - Mendekode respons JSON.
+        - Memperbarui state untuk menampilkan data pada UI.
+
+      - Menangani Error atau Timeout
+        Jika terjadi error (misalnya, koneksi gagal atau respons tidak valid), aplikasi harus menangani error ini agar tidak crash.
+
+      - Menggunakan State Management untuk Update UI
+        Dalam aplikasi yang kompleks, state management seperti Provider atau Riverpod digunakan untuk menyimpan data yang diterima dari server, lalu memperbarui UI secara otomatis.
+
 5. Jelaskan mekanisme autentikasi dari login, register, hingga logout. Mulai dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
- 
+
+    - Register: Membuat Akun Baru
+      Di Flutter (Input Data Akun)
+      - Input Data: Pengguna memasukkan informasi seperti nama, email, dan kata sandi melalui TextField atau formulir input.
+      - Validasi Input di Flutter: Memastikan semua field terisi dengan format yang benar (contoh: email valid).
+      Di Django (API Register)
+      - Endpoint Register: Django menyediakan endpoint `/api/register/` untuk menerima data pengguna.
+      - Proses Django:
+          - Mengecek apakah email sudah digunakan.
+          - Jika valid, menyimpan data pengguna ke database.
+      - Respons ke Flutter: Mengirim respons dengan status berhasil (201) atau error (400).
+
+    - Login: Autentikasi Pengguna
+      Di Flutter (Input dan Pengiriman Data Login)
+      - Input Data: Pengguna memasukkan email dan kata sandi ke formulir login.
+      - Validasi Input: Pastikan email valid dan kata sandi tidak kosong.
+      Di Django (API Login)
+      - Endpoint Login: Django menyediakan endpoint `/api/login/` untuk memvalidasi kredensial pengguna.
+      - Proses Django:
+          - Memeriksa apakah email dan kata sandi cocok dengan data pengguna di database.
+          - Jika cocok, membuat atau mengambil token autentikasi untuk pengguna.
+      - Respons ke Flutter: Mengirim token autentikasi ke Flutter jika login berhasil (status 200) atau pesan error (status 401).
+
+    - Logout: Mengakhiri Sesi
+      Di Flutter (Logout)
+      - Menghapus Token: Flutter menghapus token dari penyimpanan lokal.
+      - Opsional: Menginformasikan Server (Logout API): Flutter dapat mengirimkan request logout untuk menghapus token dari server (opsional, tergantung implementasi).
+      Di Django (API Logout)
+      - Endpoint Logout: Django dapat menyediakan endpoint /api/logout/ untuk menghapus token pengguna.
+      - Proses Django:
+          - Token yang dikirim oleh Flutter dihapus dari database.
+          - Pengguna tidak dapat mengakses endpoint yang memerlukan autentikasi.
+
+    - Setelah Login: Menampilkan Menu di Flutter
+      - Simpan Token: Token yang diterima setelah login disimpan secara lokal menggunakan shared_preferences atau library lainnya.
+      - Akses Endpoint yang Dilindungi: Token digunakan untuk mengakses data dari server.
+      - Navigasi ke Menu Utama: Setelah login, aplikasi menampilkan halaman menu utama.
+
 6. Jelaskan bagaimana cara kamu mengimplementasikan *checklist* di atas secara *step-by-step*! (bukan hanya sekadar mengikuti tutorial).

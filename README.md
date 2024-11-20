@@ -342,14 +342,14 @@ A new Flutter project for the Lazacil mobile version.
     - Menambahkan `corsheaders.middleware.CorsMiddleware` ke `MIDDLEWARE` pada main project `settings.py` aplikasi Django kamu.
     - Menambahkan beberapa variabel pada main project `settings.py` aplikasi Django.
 
-    ```python
-    CORS_ALLOW_ALL_ORIGINS = True
-    CORS_ALLOW_CREDENTIALS = True
-    CSRF_COOKIE_SECURE = True
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SAMESITE = 'None'
-    SESSION_COOKIE_SAMESITE = 'None'
-    ```
+      ```python
+      CORS_ALLOW_ALL_ORIGINS = True
+      CORS_ALLOW_CREDENTIALS = True
+      CSRF_COOKIE_SECURE = True
+      SESSION_COOKIE_SECURE = True
+      CSRF_COOKIE_SAMESITE = 'None'
+      SESSION_COOKIE_SAMESITE = 'None'
+      ```
 
     - Menambahkan `10.0.2.2` pada `ALLOWED_HOSTS` di berkas `settings.py`.
     - Membuat method `login` pada `authentication/views.py`.
@@ -380,41 +380,43 @@ A new Flutter project for the Lazacil mobile version.
     - Menambahkan `path('logout/', logout, name='logout'),` pada file `authentication/urls.py`
     - Menambahkan potongan kode berikut pada `lib/widgets/product_card.dart`
 
-    ```dart
-    ...
-    @override
-    Widget build(BuildContext context) {
-        final request = context.watch<CookieRequest>();
-        return Material(
-            ...
-    ```
+      ```dart
+      ...
+      @override
+      Widget build(BuildContext context) {
+          final request = context.watch<CookieRequest>();
+          return Material(
+              ...
+      ```
+
     - Mengubah perintah `onTap: () {...}` pada widget `Inkwell` menjadi `onTap: () async {...}`
     - Menambahkn kode berikut ke dalam `async {...}` di bagian akhir.
 
-    ```dart
-    else if (item.name == "Logout") {
-            final response = await request.logout(
-                "http://127.0.0.1:8000/auth/logout/");
-            String message = response["message"];
-            if (context.mounted) {
-              if (response['status']) {
-                String uname = response["username"];
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  content: Text("$message Sampai jumpa, $uname."),
-                ));
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LoginPage()),
-                );
-              } else {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(message),
-                  ),
-                );
+      ```dart
+      else if (item.name == "Logout") {
+              final response = await request.logout(
+                  "http://127.0.0.1:8000/auth/logout/");
+              String message = response["message"];
+              if (context.mounted) {
+                if (response['status']) {
+                  String uname = response["username"];
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Text("$message Sampai jumpa, $uname."),
+                  ));
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LoginPage()),
+                  );
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(message),
+                    ),
+                  );
+                }
               }
             }
-          }
-    ```
+      ```
+      
     - Membuat file `product_detail.dart` pada `lib/screens/` untuk menampilkan detail produk.
     - Modifikasi fungsi `itemBuilder` pada `ProductPage` untuk menangani klik dan navigasi ke halaman detail produk.

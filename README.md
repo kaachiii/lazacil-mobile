@@ -417,6 +417,6 @@ A new Flutter project for the Lazacil mobile version.
               }
             }
       ```
-      
+
     - Membuat file `product_detail.dart` pada `lib/screens/` untuk menampilkan detail produk.
-    - Modifikasi fungsi `itemBuilder` pada `ProductPage` untuk menangani klik dan navigasi ke halaman detail produk.
+    - Memodifikasi fungsi `itemBuilder` pada `ProductPage` untuk menangani klik dan navigasi ke halaman detail produk.

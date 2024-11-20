@@ -88,12 +88,22 @@ class _ProductPageState extends State<ProductPage> {
                         ),
                       ],
                     ),
-                    child: Text(
-                      product.fields.name,
-                      style: const TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          product.fields.name,
+                          style: const TextStyle(
+                            fontSize: 18.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        Text("Price: ${product.fields.price}"),
+                        const SizedBox(height: 10),
+                        Text("Description: ${product.fields.description}"),
+                      ],
                     ),
                   ),
                 );

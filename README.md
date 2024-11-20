@@ -332,3 +332,89 @@ A new Flutter project for the Lazacil mobile version.
       - Navigasi ke Menu Utama: Setelah login, aplikasi menampilkan halaman menu utama.
 
 6. Jelaskan bagaimana cara kamu mengimplementasikan *checklist* di atas secara *step-by-step*! (bukan hanya sekadar mengikuti tutorial).
+
+    - Membuat `django-app` bernama `authentication` pada project Django yang telah dibuat sebelumnya.
+    - Menambahkan `authentication` ke `INSTALLED_APPS` pada main project `settings.py` aplikasi Django.
+    - Menyalakan virtual environment Python.
+    - Menjalankan perintah `pip install django-cors-headers` untuk menginstal library yang dibutuhkan.
+    - Menambahkan `django-cors-headers` ke `requirements.txt`.
+    - Menambahkan `corsheaders` ke `INSTALLED_APPS` pada main project `settings.py` aplikasi Django.
+    - Menambahkan `corsheaders.middleware.CorsMiddleware` ke `MIDDLEWARE` pada main project `settings.py` aplikasi Django kamu.
+    - Menambahkan beberapa variabel pada main project `settings.py` aplikasi Django.
+
+    ```python
+    CORS_ALLOW_ALL_ORIGINS = True
+    CORS_ALLOW_CREDENTIALS = True
+    CSRF_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SAMESITE = 'None'
+    SESSION_COOKIE_SAMESITE = 'None'
+    ```
+
+    - Menambahkan `10.0.2.2` pada `ALLOWED_HOSTS` di berkas `settings.py`.
+    - Membuat method `login` pada `authentication/views.py`.
+    - Membuat file `urls.py` pada folder `authentication` dan tambahkan URL routing terhadap fungsi yang sudah dibuat dengan endpoint `login/`.
+    - Menambahkan `path('auth/', include('authentication.urls')),` pada file `lazacil/urls.py`.
+    - Menginstal package yang telah disediakan oleh tim asisten dosen untuk melakukan kontak dengan web service Django (termasuk operasi `GET` dan `POST`).
+    - Memodifikasi root widget (`main.dart`) untuk menyediakan `CookieRequest` library ke semua child widgets dengan menggunakan `Provider`.
+    - Membuat berkas baru pada folder `screens` dengan nama `login.dart`.
+    - Mengisi berkas `login.dart`.
+    - Mengubah `home: MyHomePage()` menjadi `home: const LoginPage()` pada file `main.dart`, pada Widget `MaterialApp(...)`.
+    - Membuat method `register` pada `authentication/views.py`.
+    - Menambahkan `path('register/', register, name='register'),` pada file `authentication/urls.py`.
+    - Membuat berkas baru pada folder `screens` dengan nama `register.dart`.
+    - Mengisi berkas `register.dart`.
+    - Membuka endpoint `JSON` dan menyalin datanya ke situs Quicktype lalu `Copy Code`.
+    - Membuat file baru `product.dart` pada folder `lib/models/` lalu tempel kode yang sudah disalin dari Quicktype.
+    - Melakukan `flutter pub add http` pada terminal proyek Flutter untuk menambahkan package `http`.
+    - Pada file `android/app/src/main/AndroidManifest.xml`, tambahkan kode berikut untuk memperbolehkan akses Internet pada aplikasi Flutter yang sedang dibuat.
+    - Membuat berkas baru pada direktori `lib/screens` dengan nama `list_product.dart`.
+    - Mengisi `list_product.dart` dan jangan lupa untuk mengimpor file atau modul yang diperlukan.
+    - Menambahkan halaman `list_product.dart` ke `widgets/left_drawer.dart`.
+    - Mengubah fungsi tombol `Lihat Daftar Produk` pada halaman utama agar mengarahkan ke halaman `ProductPage`.
+    - Membuat fungsi `create_product_flutter` pada `main/views.py`.
+    - Menambahkan path baru `path('create-flutter/', create_product_flutter, name='create_product_flutter'),` pada `main/urls.py`.
+    - Menghubungkan halaman `product_form.dart` dengan `CookieRequest`.
+    - Mengubah perintah pada `onPressed: ()` button.
+    - Membuat method `logout` pada `authentication/views.py`.
+    - Menambahkan `path('logout/', logout, name='logout'),` pada file `authentication/urls.py`
+    - Menambahkan potongan kode berikut pada `lib/widgets/product_card.dart`
+
+    ```dart
+    ...
+    @override
+    Widget build(BuildContext context) {
+        final request = context.watch<CookieRequest>();
+        return Material(
+            ...
+    ```
+    - Mengubah perintah `onTap: () {...}` pada widget `Inkwell` menjadi `onTap: () async {...}`
+    - Menambahkn kode berikut ke dalam `async {...}` di bagian akhir.
+
+    ```dart
+    else if (item.name == "Logout") {
+            final response = await request.logout(
+                "http://127.0.0.1:8000/auth/logout/");
+            String message = response["message"];
+            if (context.mounted) {
+              if (response['status']) {
+                String uname = response["username"];
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text("$message Sampai jumpa, $uname."),
+                ));
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginPage()),
+                );
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(message),
+                  ),
+                );
+              }
+            }
+          }
+    ```
+    - Membuat file `product_detail.dart` pada `lib/screens/` untuk menampilkan detail produk.
+    - Modifikasi fungsi `itemBuilder` pada `ProductPage` untuk menangani klik dan navigasi ke halaman detail produk.
